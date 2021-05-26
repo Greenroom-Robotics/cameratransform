@@ -22,7 +22,6 @@ import pandas as pd
 import os
 import json
 import itertools
-import matplotlib.pyplot as plt
 import cv2
 from scipy import stats
 from .parameter_set import ParameterSet, ClassWithParameterSet, Parameter, TYPE_GPS
@@ -31,6 +30,11 @@ from .spatial import SpatialOrientation
 from .lens_distortion import NoDistortion, LensDistortion, ABCDistortion, BrownLensDistortion
 from . import gps
 from . import ray
+
+try:
+    import matplotlib.pyplot as plt
+except:
+    print("matplotlib not found")
 
 RECTILINEAR = 0
 CYLINDRICAL = 1
